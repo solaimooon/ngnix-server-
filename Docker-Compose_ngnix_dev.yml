@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+
+  nginx:
+    container_name: nginx
+    image: nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/nginx_dev.conf:/etc/nginx/nginx.conf
+      - static_volume:/home/backend/static
+      - media_volume:/home/backend/media
+
+    networks:
+      - shared_net  
+    
+
+volumes:
+  static_volume:
+    external: true
+    name: educational-management_static_volume
+  media_volume:
+    external: true
+    name: educational-management_media_volume
+
+networks:
+  shared_net:
+    external: true
