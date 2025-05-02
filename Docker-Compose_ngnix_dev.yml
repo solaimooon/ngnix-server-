@@ -1,7 +1,6 @@
 version: '3'
 
 services:
-
   nginx:
     container_name: nginx
     image: nginx
@@ -11,10 +10,10 @@ services:
       - ./nginx/nginx_dev.conf:/etc/nginx/nginx.conf
       - static_volume:/home/backend/static
       - media_volume:/home/backend/media
-
+      - static_volume_rez:/home/backend_rez/static_file  # ولوم استاتیک سرویس دوم
+      - media_volume_rez:/home/backend_rez/media        # ولوم مدیا سرویس دوم
     networks:
-      - shared_net  
-    
+      - shared_net
 
 volumes:
   static_volume:
@@ -23,6 +22,12 @@ volumes:
   media_volume:
     external: true
     name: educational-management_media_volume
+  static_volume_rez:
+    external: true
+    name: static_volume_rez  # نام ولوم سرویس دوم
+  media_volume_rez:
+    external: true
+    name: media_volume_rez  # نام ولوم سرویس دوم
 
 networks:
   shared_net:
