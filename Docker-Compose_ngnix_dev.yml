@@ -18,16 +18,20 @@ services:
 volumes:
   static_volume:
     external: true
-    name: educational-management_static_volume
+    name: educational-management-dockrised_static_volume
+
+
   media_volume:
     external: true
-    name: educational-management_media_volume
+    name: educational-management-dockrised_media_volume
   static_volume_rez:
     external: true
-    name: static_volume_rez  # نام ولوم سرویس دوم
+    name: hosseini_project_static_volume_rez
+  # نام ولوم سرویس دوم
   media_volume_rez:
     external: true
-    name: media_volume_rez  # نام ولوم سرویس دوم
+    name: hosseini_project_media_volume_rez
+  # نام ولوم سرویس دوم
 
 networks:
   shared_net:
