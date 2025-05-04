@@ -7,7 +7,7 @@ services:
     ports:
       - "80:80"
     volumes:
-      - ./nginx/nginx_dev.conf:/etc/nginx/nginx.conf
+      - ./nginx/nginx_pro.conf:/etc/nginx/nginx.conf
       - static_volume:/home/backend/static
       - media_volume:/home/backend/media
       - static_volume_rez:/home/backend_rez/static_file  # ولوم استاتیک سرویس دوم
