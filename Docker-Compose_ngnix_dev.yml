@@ -12,6 +12,8 @@ services:
       - media_volume:/home/backend/media
       - static_volume_rez:/home/backend_rez/static_file  # ولوم استاتیک سرویس دوم
       - media_volume_rez:/home/backend_rez/media        # ولوم مدیا سرویس دوم
+      - static_volume_mjes:home/backend_mjes/static_file
+      - media_volume_mjes:home/backend_mjes/media
     networks:
       - shared_net
 
@@ -19,19 +21,21 @@ volumes:
   static_volume:
     external: true
     name: educational-management-dockrised_static_volume
-
-
   media_volume:
     external: true
     name: educational-management-dockrised_media_volume
   static_volume_rez:
     external: true
     name: hosseini_project_static_volume_rez
-  # نام ولوم سرویس دوم
   media_volume_rez:
     external: true
     name: hosseini_project_media_volume_rez
-  # نام ولوم سرویس دوم
+  static_volume_mjes:
+    external: true
+    name: mjesir_static_volume_mjes
+  media_volume_mjes:
+    name: mjesir_media_volume_mjes
+
 
 networks:
   shared_net:
