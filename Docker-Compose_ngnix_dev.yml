@@ -12,8 +12,8 @@ services:
       - media_volume:/home/backend/media
       - static_volume_rez:/home/backend_rez/static_file  # ولوم استاتیک سرویس دوم
       - media_volume_rez:/home/backend_rez/media        # ولوم مدیا سرویس دوم
-      - static_volume_mjes:home/backend_mjes/static_file
-      - media_volume_mjes:home/backend_mjes/media
+      - static_volume_mjes:/home/backend_mjes/static_file
+      - media_volume_mjes:/home/backend_mjes/media
     networks:
       - shared_net
 
