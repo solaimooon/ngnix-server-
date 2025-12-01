@@ -12,8 +12,9 @@ services:
       - media_volume:/home/backend/media
       - static_volume_rez:/home/backend_rez/static_file  # ولوم استاتیک سرویس دوم
       - media_volume_rez:/home/backend_rez/media        # ولوم مدیا سرویس دوم
-      - static_volume_mjes:/home/backend_mjes/static_file
-      - media_volume_mjes:/home/backend_mjes/media
+      - static_volume_mjes:/home/backend_mjes/static_file #ولوم  استاتیک سرویس سوم
+      - media_volume_mjes:/home/backend_mjes/media # ولوم  مدیا سرویس سوم
+      - wordpress_volume:/var/www/wordpress #ولوم سرویس چهارم
     networks:
       - shared_net
 
@@ -35,6 +36,9 @@ volumes:
     name: mjesir_static_volume_mjes
   media_volume_mjes:
     name: mjesir_media_volume_mjes
+  wordpress_volume:
+    external: true
+    name: wordpress_data_volume
 
 
 
